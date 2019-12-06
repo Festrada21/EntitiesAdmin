@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace EntitiesAdmin.Data.Entities
 {
-    public partial class StatusEmployees
+    public partial class StatusEmployee
     {
-        public StatusEmployees()
+        public StatusEmployee()
         {
-            Employees = new HashSet<Employees>();
+            Employees = new HashSet<Employee>();
         }
 
         public int StatusEmployeeId { get; set; }
@@ -16,8 +16,8 @@ namespace EntitiesAdmin.Data.Entities
         public string UserId { get; set; }
         public DateTime? EditionDate { get; set; }
 
-        public virtual StatusFields StatusField { get; set; }
+        public virtual StatusField StatusField { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Employees> Employees { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 namespace EntitiesAdmin.Data.Entities
 {
-    public partial class Rosters
+    public partial class RequestCategory
     {
-        public Rosters()
+        public RequestCategory()
         {
-            Departments = new HashSet<Departments>();
+            TypeRequests = new HashSet<TypeRequest>();
         }
 
-        public int RosterId { get; set; }
+        public int RequestCategoryId { get; set; }
         public string Name { get; set; }
         public int? StatusFieldId { get; set; }
         public string UserId { get; set; }
         public DateTime EditionDate { get; set; }
 
-        public virtual StatusFields StatusField { get; set; }
+        public virtual StatusField StatusField { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Departments> Departments { get; set; }
+        public virtual ICollection<TypeRequest> TypeRequests { get; set; }
     }
 }

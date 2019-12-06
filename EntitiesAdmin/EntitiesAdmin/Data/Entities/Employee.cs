@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace EntitiesAdmin.Data.Entities
 {
-    public partial class Employees
+    public partial class Employee
     {
-        public Employees()
+        public Employee()
         {
             User = new HashSet<User>();
         }
@@ -25,11 +25,11 @@ namespace EntitiesAdmin.Data.Entities
         public int? SkillId { get; set; }
         public string ImageUrl { get; set; }
 
-        public virtual Countries Country { get; set; }
-        public virtual JobPositions JobPosition { get; set; }
+        public virtual Country Country { get; set; }
+        public virtual JobPosition JobPosition { get; set; }
         public virtual Site Site { get; set; }
-        public virtual Skills Skill { get; set; }
-        public virtual StatusEmployees StatusEmployee { get; set; }
+        public virtual Skill Skill { get; set; }
+        public virtual StatusEmployee StatusEmployee { get; set; }
         public virtual ICollection<User> User { get; set; }
     }
 }

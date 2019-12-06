@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace EntitiesAdmin.Data.Entities
 {
-    public partial class Departments
+    public partial class Department
     {
-        public Departments()
+        public Department()
         {
-            Skills = new HashSet<Skills>();
-            TypeRequests = new HashSet<TypeRequests>();
+            Skills = new HashSet<Skill>();
+            TypeRequests = new HashSet<TypeRequest>();
         }
 
         public int DepartmentId { get; set; }
@@ -18,10 +18,10 @@ namespace EntitiesAdmin.Data.Entities
         public string UserId { get; set; }
         public DateTime? EditionDate { get; set; }
 
-        public virtual Rosters Roster { get; set; }
-        public virtual StatusFields StatusField { get; set; }
+        public virtual Roster Roster { get; set; }
+        public virtual StatusField StatusField { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Skills> Skills { get; set; }
-        public virtual ICollection<TypeRequests> TypeRequests { get; set; }
+        public virtual ICollection<Skill> Skills { get; set; }
+        public virtual ICollection<TypeRequest> TypeRequests { get; set; }
     }
 }

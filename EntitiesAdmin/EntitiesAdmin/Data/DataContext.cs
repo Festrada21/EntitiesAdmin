@@ -10,25 +10,26 @@ namespace EntitiesAdmin.Data.Entities
         {
         }
 
-        public virtual DbSet<Countries> Countries { get; set; }
-        public virtual DbSet<Departments> Departments { get; set; }
-        public virtual DbSet<Employees> Employees { get; set; }
-        public virtual DbSet<JobPositions> JobPositions { get; set; }
-        public virtual DbSet<RequestCategories> RequestCategories { get; set; }
-        public virtual DbSet<Requests> Requests { get; set; }
-        public virtual DbSet<Rosters> Rosters { get; set; }
-        public virtual DbSet<Site> Site { get; set; }
-        public virtual DbSet<Skills> Skills { get; set; }
-        public virtual DbSet<StatusEmployees> StatusEmployees { get; set; }
-        public virtual DbSet<StatusFields> StatusFields { get; set; }
+        public virtual DbSet<StatusField> StatusFields { get; set; }
+        public virtual DbSet<RequestCategory> RequestCategories { get; set; }
         public virtual DbSet<StatusRequest> StatusRequest { get; set; }
-        public virtual DbSet<TypeRequests> TypeRequests { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Site> Sites { get; set; }
+        public virtual DbSet<JobPosition> JobPositions { get; set; }
+        public virtual DbSet<StatusEmployee> StatusEmployees { get; set; }
+        public virtual DbSet<Roster> Rosters { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<TypeRequest> TypeRequests { get; set; }
+        public virtual DbSet<Request> Requests { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Countries>(entity =>
+            modelBuilder.Entity<Country>(entity =>
             {
                 entity.HasKey(e => e.CountryId);
 
@@ -49,7 +50,7 @@ namespace EntitiesAdmin.Data.Entities
                     .HasForeignKey(d => d.StatusFieldId);
             });
 
-            modelBuilder.Entity<Departments>(entity =>
+            modelBuilder.Entity<Department>(entity =>
             {
                 entity.HasKey(e => e.DepartmentId);
 
@@ -78,7 +79,7 @@ namespace EntitiesAdmin.Data.Entities
 
             });
 
-            modelBuilder.Entity<Employees>(entity =>
+            modelBuilder.Entity<Employee>(entity =>
             {
                 entity.HasKey(e => e.EmployeeId);
 
@@ -137,7 +138,7 @@ namespace EntitiesAdmin.Data.Entities
                     .HasForeignKey(d => d.StatusEmployeeId);
             });
 
-            modelBuilder.Entity<JobPositions>(entity =>
+            modelBuilder.Entity<JobPosition>(entity =>
             {
                 entity.HasKey(e => e.PositionId);
 
@@ -158,7 +159,7 @@ namespace EntitiesAdmin.Data.Entities
                     .HasForeignKey(d => d.StatusFieldId);
             });
 
-            modelBuilder.Entity<RequestCategories>(entity =>
+            modelBuilder.Entity<RequestCategory>(entity =>
             {
                 entity.HasKey(e => e.RequestCategoryId);
 
@@ -178,7 +179,7 @@ namespace EntitiesAdmin.Data.Entities
                     .WithMany(p => p.RequestCategories)
                     .HasForeignKey(d => d.StatusFieldId);
 
-                modelBuilder.Entity<Requests>(entity =>
+                modelBuilder.Entity<Request>(entity =>
                 {
                     entity.HasKey(e => e.RequestId);
 
@@ -205,7 +206,7 @@ namespace EntitiesAdmin.Data.Entities
                         .HasForeignKey(d => d.TypeRequestId);
                 });
 
-                modelBuilder.Entity<Rosters>(entity =>
+                modelBuilder.Entity<Roster>(entity =>
                 {
                     entity.HasKey(e => e.RosterId);
 
@@ -251,7 +252,7 @@ namespace EntitiesAdmin.Data.Entities
                         .HasForeignKey(d => d.StatusFieldId);
                 });
 
-                modelBuilder.Entity<Skills>(entity =>
+                modelBuilder.Entity<Skill>(entity =>
                 {
                     entity.HasKey(e => e.SkillId);
 
@@ -280,7 +281,7 @@ namespace EntitiesAdmin.Data.Entities
                         .HasForeignKey(d => d.StatusFieldId);
                 });
 
-                modelBuilder.Entity<StatusEmployees>(entity =>
+                modelBuilder.Entity<StatusEmployee>(entity =>
                 {
                     entity.HasKey(e => e.StatusEmployeeId);
 
@@ -301,9 +302,9 @@ namespace EntitiesAdmin.Data.Entities
                         .HasForeignKey(d => d.StatusFieldId);
                 });
 
-                modelBuilder.Entity<StatusFields>(entity =>
+                modelBuilder.Entity<StatusField>(entity =>
                 {
-                    entity.HasKey(e => e.Id);
+                    entity.HasKey(e => e.StatusFieldId);
 
                     entity.HasIndex(e => e.Name)
                         .HasName("UNameStatusField")
@@ -333,7 +334,7 @@ namespace EntitiesAdmin.Data.Entities
                         .HasForeignKey(d => d.StatusFieldId);
                 });
 
-                modelBuilder.Entity<TypeRequests>(entity =>
+                modelBuilder.Entity<TypeRequest>(entity =>
                 {
                     entity.HasKey(e => e.TypeRequestId);
 

@@ -7,7 +7,7 @@ namespace EntitiesAdmin.Data.Entities
     {
         public Site()
         {
-            Employees = new HashSet<Employees>();
+            Employees = new HashSet<Employee>();
         }
 
         public int SiteId { get; set; }
@@ -17,9 +17,9 @@ namespace EntitiesAdmin.Data.Entities
         public string UserId { get; set; }
         public DateTime EditionDate { get; set; }
 
-        public virtual Countries Country { get; set; }
-        public virtual StatusFields StatusField { get; set; }
+        public virtual Country Country { get; set; }
+        public virtual StatusField StatusField { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Employees> Employees { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EntitiesAdmin.Data.Entities
 {
-    public partial class Requests
+    public partial class Request
     {
         public int RequestId { get; set; }
         public DateTime Date { get; set; }
@@ -14,7 +14,7 @@ namespace EntitiesAdmin.Data.Entities
         public int StatusRequestId { get; set; }
 
         public virtual StatusRequest StatusRequest { get; set; }
-        public virtual TypeRequests TypeRequest { get; set; }
+        public virtual TypeRequest TypeRequest { get; set; }
         public virtual User User { get; set; }
     }
 }
