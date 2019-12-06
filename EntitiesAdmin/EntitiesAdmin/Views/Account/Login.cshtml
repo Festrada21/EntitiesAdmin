@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome-free-5.11.2-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome-free-5.11.2-web/css/brands.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome-free-5.11.2-web/css/solid.css" rel="stylesheet" />
+    <style>
+        .centered {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+   </head>
+<body class="p-3 mb-2 bg-dark">
+    <div class="container ">
+        <main role="main" class="pb-3">
+            @model EntitiesAdmin.Models.LoginViewModel
+            @{
+                ViewData["Title"] = "Login";
+            }
+
+            <div class="row centered">
+                    <div class="col-md-12">
+                        <div class="shadow-lg bg-white rounded">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="align-middle">Login</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form method="post">
+                                        <div asp-validation-summary="ModelOnly"></div>
+                                        <div class="form-group">
+                                            <label asp-for="Username">Username</label>
+                                            <input asp-for="Username" class="form-control" />
+                                            <span asp-validation-for="Username" class="text-warning"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label asp-for="Password">Password</label>
+                                            <input asp-for="Password" type="password" class="form-control" />
+                                            <span asp-validation-for="Password" class="text-warning"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input asp-for="RememberMe" type="checkbox" class="form-check-input" />
+                                                <label asp-for="RememberMe" class="form-check-label">Remember Me?</label>
+                                            </div>
+                                            <span asp-validation-for="RememberMe" class="text-warning"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success" title="Login">
+                                                <i class="fas fa-sign-in-alt"></i> Login
+                                            </button>
+                                            <a asp-action="RecoverPassword" class="btn btn-link">Forgot your password?</a>
+                                        </div>
+                                    </form>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
+        </main>
+    </div>
+    
+   
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/sweetalert2.all.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+</body>
+</html>
