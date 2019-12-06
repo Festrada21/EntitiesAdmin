@@ -19,9 +19,12 @@ namespace EntitiesAdmin.Data.Entities
             TypeRequests = new HashSet<TypeRequest>();
         }
 
+        #region Data
         public int StatusFieldId { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } 
+        #endregion
 
+        #region Relations
         public virtual ICollection<Country> Countries { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<JobPosition> JobPositions { get; set; }
@@ -31,6 +34,7 @@ namespace EntitiesAdmin.Data.Entities
         public virtual ICollection<Skill> Skills { get; set; }
         public virtual ICollection<StatusEmployee> StatusEmployees { get; set; }
         public virtual ICollection<StatusRequest> StatusRequest { get; set; }
-        public virtual ICollection<TypeRequest> TypeRequests { get; set; }
+        public virtual ICollection<TypeRequest> TypeRequests { get; set; } 
+        #endregion
     }
 }

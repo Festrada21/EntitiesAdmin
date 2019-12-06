@@ -12,6 +12,7 @@ namespace EntitiesAdmin.Data.Entities
         {
             Requests = new HashSet<Request>();
         }
+
         #region Data
 
         public int TypeRequestId { get; set; }
@@ -31,10 +32,12 @@ namespace EntitiesAdmin.Data.Entities
 
         public string UserId { get; set; }
 
-
-        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime EditionDate { get; set; }
+
+        [Display(Name = "Edition Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm}")]
+        public DateTime EditionDateLocal => EditionDate.ToLocalTime();
         #endregion
 
         #region NoMapped
@@ -44,7 +47,6 @@ namespace EntitiesAdmin.Data.Entities
         public IEnumerable<SelectListItem> RequestCategories { get; set; }
 
         #endregion
-
 
         #region Relations
         public virtual Department Department { get; set; }
