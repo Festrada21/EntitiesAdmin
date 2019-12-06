@@ -7,7 +7,7 @@ namespace EntitiesAdmin.Data.Entities
     {
         public Employees()
         {
-            AspNetUsers = new HashSet<AspNetUsers>();
+            User = new HashSet<User>();
         }
 
         public int EmployeeId { get; set; }
@@ -30,6 +30,6 @@ namespace EntitiesAdmin.Data.Entities
         public virtual Site Site { get; set; }
         public virtual Skills Skill { get; set; }
         public virtual StatusEmployees StatusEmployee { get; set; }
-        public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }

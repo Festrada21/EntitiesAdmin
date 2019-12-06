@@ -18,10 +18,12 @@ namespace EntitiesAdmin.Data.Entities
         public string UserId { get; set; }
         public DateTime EditionDate { get; set; }
 
+        #region Relations
         public virtual Departments Department { get; set; }
         public virtual RequestCategories RequestCategory { get; set; }
         public virtual StatusFields StatusField { get; set; }
-        public virtual AspNetUsers User { get; set; }
-        public virtual ICollection<Requests> Requests { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<Requests> Requests { get; set; } 
+        #endregion
     }
 }

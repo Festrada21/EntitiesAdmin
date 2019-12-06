@@ -15,6 +15,6 @@ namespace EntitiesAdmin.Data.Entities
 
         public virtual StatusRequest StatusRequest { get; set; }
         public virtual TypeRequests TypeRequest { get; set; }
-        public virtual AspNetUsers User { get; set; }
+        public virtual User User { get; set; }
     }
 }

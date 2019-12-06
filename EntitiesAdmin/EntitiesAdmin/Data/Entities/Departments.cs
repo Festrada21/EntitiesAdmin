@@ -20,7 +20,7 @@ namespace EntitiesAdmin.Data.Entities
 
         public virtual Rosters Roster { get; set; }
         public virtual StatusFields StatusField { get; set; }
-        public virtual AspNetUsers User { get; set; }
+        public virtual User User { get; set; }
         public virtual ICollection<Skills> Skills { get; set; }
         public virtual ICollection<TypeRequests> TypeRequests { get; set; }
     }

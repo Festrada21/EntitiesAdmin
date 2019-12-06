@@ -17,7 +17,7 @@ namespace EntitiesAdmin.Data.Entities
         public DateTime EditionDate { get; set; }
 
         public virtual StatusFields StatusField { get; set; }
-        public virtual AspNetUsers User { get; set; }
+        public virtual User User { get; set; }
         public virtual ICollection<Employees> Employees { get; set; }
     }
 }
