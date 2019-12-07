@@ -74,7 +74,7 @@ namespace EntitiesAdmin.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return PartialView(country);
+            return View(country);
         }
 
         // GET: Countries/Edit/5
@@ -137,7 +137,7 @@ namespace EntitiesAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return PartialView(country);
+            return View(country);
         }
 
         // GET: Countries/Delete/5
